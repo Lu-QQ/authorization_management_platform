@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.TBooksMapper">
+    
+    <resultMap type="TBooks" id="TBooksResult">
+        <result property="id"    column="id"    />
+        <result property="title"    column="title"    />
+        <result property="author"    column="author"    />
+        <result property="publicationYear"    column="publication_year"    />
+    </resultMap>
+
+    <sql id="selectTBooksVo">
+        select id, title, author, publication_year from t_books
+    </sql>
+
+    <select id="selectTBooksList" parameterType="TBooks" resultMap="TBooksResult">
+        <include refid="selectTBooksVo"/>
+        <where>  
+            <if test="title != null  and title != ''"> and title like concat('%', #{title}, '%')</if>
+            <if test="author != null  and author != ''"> and author = #{author}</if>
+        </where>
+    </select>
+    
+    <select id="selectTBooksById" parameterType="Long" resultMap="TBooksResult">
+        <include refid="selectTBooksVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertTBooks" parameterType="TBooks" useGeneratedKeys="true" keyProperty="id">
+        insert into t_books
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null and title != ''">title,</if>
+            <if test="author != null and author != ''">author,</if>
+            <if test="publicationYear != null">publication_year,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null and title != ''">#{title},</if>
+            <if test="author != null and author != ''">#{author},</if>
+            <if test="publicationYear != null">#{publicationYear},</if>
+         </trim>
+    </insert>
+
+    <update id="updateTBooks" parameterType="TBooks">
+        update t_books
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="title != null and title != ''">title = #{title},</if>
+            <if test="author != null and author != ''">author = #{author},</if>
+            <if test="publicationYear != null">publication_year = #{publicationYear},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTBooksById" parameterType="Long">
+        delete from t_books where id = #{id}
+    </delete>
+
+    <delete id="deleteTBooksByIds" parameterType="String">
+        delete from t_books where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
