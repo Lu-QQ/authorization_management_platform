@@ -180,7 +180,21 @@
                 <artifactId>ruoyi-common</artifactId>
                 <version>${ruoyi.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.ruoyi</groupId>
+                <artifactId>msun-authorization</artifactId>
+                <version>${ruoyi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.msun</groupId>
+                <artifactId>msun-sm-util</artifactId>
+                <version>${ruoyi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ruoyi</groupId>
+                <artifactId>msun-external-service</artifactId>
+                <version>${ruoyi.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -192,6 +206,8 @@
         <module>ruoyi-generator</module>
         <module>ruoyi-common</module>
         <module>msun-authorization</module>
+        <module>msun-sm-util</module>
+        <module>msun-external-service</module>
     </modules>
     <packaging>pom</packaging>
 

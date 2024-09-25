@@ -118,7 +118,11 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
         </dependency>
-
+        <!-- 国密加密包 -->
+        <dependency>
+            <groupId>com.msun</groupId>
+            <artifactId>msun-sm-util</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

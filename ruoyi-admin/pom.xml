@@ -61,7 +61,16 @@
             <groupId>com.ruoyi</groupId>
             <artifactId>ruoyi-generator</artifactId>
         </dependency>
-
+        <!-- 授权模块-->
+        <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>msun-authorization</artifactId>
+        </dependency>
+        <!-- 外部服务模块-->
+        <dependency>
+            <groupId>com.ruoyi</groupId>
+            <artifactId>msun-external-service</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
