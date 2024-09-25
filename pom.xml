@@ -8,7 +8,7 @@
     <artifactId>authorization</artifactId>
     <version>3.8.8</version>
 
-    <name>authorization_management_platform</name>
+    <name>authorization_management_server</name>
     <description>认证授权管理平台</description>
 
     <properties>
