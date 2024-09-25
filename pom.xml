@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-    <groupId>com.ruoyi</groupId>
-    <artifactId>ruoyi</artifactId>
+    <groupId>com.msun</groupId>
+    <artifactId>authorization</artifactId>
     <version>3.8.8</version>
 
     <name>authorization_management_platform</name>
     <description>认证授权管理平台</description>
-    
+
     <properties>
-        <ruoyi.version>3.8.8</ruoyi.version>
+        <authorization.version>3.8.8</authorization.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -148,66 +148,66 @@
 
             <!-- 定时任务-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-quartz</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.msun</groupId>
+                <artifactId>authorization-quartz</artifactId>
+                <version>${authorization.version}</version>
             </dependency>
 
             <!-- 代码生成-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-generator</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.msun</groupId>
+                <artifactId>authorization-generator</artifactId>
+                <version>${authorization.version}</version>
             </dependency>
 
             <!-- 核心模块-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-framework</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.msun</groupId>
+                <artifactId>authorization-framework</artifactId>
+                <version>${authorization.version}</version>
             </dependency>
 
             <!-- 系统模块-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-system</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.msun</groupId>
+                <artifactId>authorization-system</artifactId>
+                <version>${authorization.version}</version>
             </dependency>
 
             <!-- 通用工具-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.msun</groupId>
+                <artifactId>authorization-common</artifactId>
+                <version>${authorization.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>msun-authorization</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.msun</groupId>
+                <artifactId>authorization-module</artifactId>
+                <version>${authorization.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.msun</groupId>
                 <artifactId>msun-sm-util</artifactId>
-                <version>${ruoyi.version}</version>
+                <version>${authorization.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>msun-external-service</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.msun</groupId>
+                <artifactId>authorization-external-service</artifactId>
+                <version>${authorization.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <modules>
-        <module>ruoyi-admin</module>
-        <module>ruoyi-framework</module>
-        <module>ruoyi-system</module>
-        <module>ruoyi-quartz</module>
-        <module>ruoyi-generator</module>
-        <module>ruoyi-common</module>
-        <module>msun-authorization</module>
+        <module>authorization-admin</module>
+        <module>authorization-framework</module>
+        <module>authorization-system</module>
+        <module>authorization-quartz</module>
+        <module>authorization-generator</module>
+        <module>authorization-common</module>
+        <module>authorization-module</module>
         <module>msun-sm-util</module>
-        <module>msun-external-service</module>
+        <module>authorization-external-service</module>
     </modules>
     <packaging>pom</packaging>
 
